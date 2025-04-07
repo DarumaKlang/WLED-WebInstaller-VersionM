@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Install WLED</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main Template & CSS File -->
+    <link href="style.css"rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- Main Script -->
+    <script type="module" src="installer/install-button.js"></script>
+</head>
+
+<body class="index-page" onload="checkSupported()">
+
+    <header id="header" class="header sticky-top">
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center"><a
+                            href="mailto:grids@microtronic.biz.com">grids@microtronic.biz</a></i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4"><span>+66 65-541-9166</span></i>
+                </div>
+                <div class="social-links d-none d-md-flex align-items-center">
+                    <a href="https://www.facebook.com/BlackWingsCenter/" class="facebook"><i
+                            class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/kon.phan.tang/" class="instagram"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/micro-dev-g/" class="linkedin"><i
+                            class="bi bi-linkedin"></i></a>
+                    <a href="https://github.com/GridsMicro/microtronic" class="github" ><i 
+                            class="bi bi-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Bar -->
+
+        <div class="branding d-flex align-items-center">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- <img src="assets/img/logo.png" alt=""> -->
+                    <h1 class="sitename">Microtronic.Biz</h1>
+                </a>
+
+                <!-- Edit 5-4-2025 -->
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="#hero" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#"><span>Services</span>
+                                <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li>
+                                    <a href="https://store.microtronic.biz/index.php?view=category&id=8">Next.js
+                                        Components</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="/microcontroller_tools.html"><span>Microcontroller Tools</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="/App/wled-Installer/microtronic-v.html"> WLED Installer</a></li>
+                                        <li><a href="#"> Community 2</a></li>
+                                        <li><a href="#"> Community 3</a></li>
+                                        <li><a href="#"> Community 4</a></li>
+                                        <li><a href="#"> Community 5</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://store.microtronic.biz/index.php?view=article&id=4:class-novice-sahrab-phu-thi-mi-prasbkarn-wordpress&catid=9">Novice Class</a></li>
+                                <li><a href="https://store.microtronic.biz/index.php?view=article&id=5:class-special-interest-sahrab-phu-thi-snci-chephaa-thang&catid=9">Special interest</a></li>
+                                <li class="dropdown">
+                                    <a href="community_hub.html"><span>Community Hub</span>
+                                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                                    <ul>
+                                        <li><a href="#"> Community 1</a></li>
+                                        <li><a href="#"> Community 2</a></li>
+                                        <li><a href="#"> Community 3</a></li>
+                                        <li><a href="#"> Community 4</a></li>
+                                        <li><a href="#"> Community 5</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+                <!-- End Edit 5-4-2025 -->
+                
+            </div>
+        </div>
+    </header>
+
+    <main class="main dark-background">
+
+        <!-- Services Section -->
+        <section id="service" class="service section dark-background">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <img alt="" 
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAG0AAAAfCAMAAADazLOuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABLUExURQAAAAB81gCU/zKq///mo7sWMN8bO+ZIYtZaAP9rAP+HMsCiG+TAIOnMS0KqNU7KPnLUZOrq6v///4CAgGhoaL+/v6CgoExMTAAAAAlm4O8AAAAZdFJOU////////////////////////////////wABNAq3AAAACXBIWXMAAA7DAAAOwwHHb6hkAAACN0lEQVRIS73VjVLCMBAEYIr8CYKkrdj3f1J37zaXFCpTO+piaDgbPq9px9VQ0qyrvKj4q6m0Zr1h+M7xF1zRmnWzqV9/0d2jttGotO1uv9dUObwej5oqp7fzWVPl8n69aprzoOUUbbvdIbV3OLwitXc6vSG1d7m8I3feSEN0j2CeNbOY4MxigjOLCc4sZsTV2l1cCyy4wIILLLjAxtykltq2rbTU+qi01N5rXNO2leaFORoija2l5MM5a02ac9Ya16Sk5tgaPrUpjZub0BL6YqSxKwbH77XUUmSkJXSl8QtaMuyJhq5maL5nTKVpZC13VmtMpTFT2g4vJjTuGfMzzXftiUZnhdtgb1xofvypRon5TjNnxYN9zJo6K5ruSIzQtGuVZn0x91rKvdHBvm39E7SyZ4y06Gz8BDBFKzsXmhcwyfsGZ9VpbhoiCinaxPNmGWmWWrNU2jB0q6HvOhN1JUtCixQtp2g51ZVUXIPS2RMAD++T2nY/DrDjOMDO4wC7jmNYj3d73nrXug8Yt9uNB8xNU1cKNXWlUFNXCjV1pZhGTE83m2vWfYf/NGj4Bg1zu5JD3/MnH5ZWfLOksbmGWGjgXMN5/C2GXYGFFW9Nmtle6Xut0Gm+JsayCj8z0nhjGvYJzVf4aSzmNYsr+u7Q2JIdoX3YOQjOslmsW1jJ3120nE9gfo79hTaNdcsqVR610lvO47pllae9ReZ805zKo2a3iaY5c75pTmVCA6dJ5H7N0sr/asPwBehb7ifEhusRAAAAAElFTkSuQmCC">
+                
+                <br><br>
+
+                <h2>Microcontroller Service Tools</h2>
+
+                <br>
+                
+                <p>
+                    <span>ยินดีต้อนรับสู่โปรแกรมติดตั้งผ่านเว็บไซต์</span>
+                    <span class="description-title"> WLED! Installer</span>
+                </p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" id="flasher">
+                <ol>
+                    <li>เสียบ ESP ของคุณเข้ากับพอร์ต USB เพื่อติดตั้ง WLED <span id="verstr">0.12.0</span></li>
+                    <li id="coms">กด "Install" และเลือกพอร์ต COM ที่ถูกต้อง <a
+                            onclick="showSerialHelp()">ไม่พบอุปกรณ์ใช่หรือไม่?</a></li>
+                    <li>ติดตั้งและเชื่อมต่อ WLED ในเวลาไม่ถึง 3 นาที!</li>
+                </ol>
+                        
+                <br><br>
+        
+                <!-- add new builds here -->
+                <select id="ver" class="btn" onchange="resetCheckboxes();setManifest();">
+                    <optgroup label="Release">
+                        <option data-manifest="bin/release_0_15_0/manifest.json"
+                            data-ethernet="bin/release_0_15_0/manifest_e.json"
+                            data-test="bin/release_0_15_0/manifest_t.json">0.15.0</option>
+                        <option data-manifest="bin/release_0_14_4/manifest.json"
+                            data-ethernet="bin/release_0_14_4/manifest_e.json"
+                            data-audio="bin/release_0_14_4/manifest_a.json" data-test="bin/beta_0_14_4/manifest_t.json">
+                            0.14.4</option>
+                        <option data-manifest="bin/release_0_14_3/manifest.json"
+                            data-ethernet="bin/release_0_14_3/manifest_e.json"
+                            data-audio="bin/release_0_14_3/manifest_a.json" data-test="bin/beta_0_14_3/manifest_t.json">
+                            0.14.3</option>
+                        <option data-manifest="bin/release_0_14_2/manifest.json"
+                            data-ethernet="bin/release_0_14_2/manifest_e.json"
+                            data-audio="bin/release_0_14_2/manifest_a.json" data-test="bin/beta_0_14_2/manifest_t.json">
+                            0.14.2</option>
+                        <option data-manifest="bin/release_0_14_1/manifest.json"
+                            data-ethernet="bin/release_0_14_1/manifest_e.json"
+                            data-audio="bin/release_0_14_1/manifest_a.json">0.14.1</option>
+                        <option data-manifest="bin/release_0_14_0/manifest.json"
+                            data-ethernet="bin/release_0_14_0/manifest_e.json"
+                            data-audio="bin/release_0_14_0/manifest_a.json">0.14.0</option>
+                        <option data-manifest="bin/release_0_13_3/manifest.json"
+                            data-ethernet="bin/release_0_13_3/manifest_e.json">
+                            0.13.3</option>
+                        <option data-manifest="bin/release_0_13_1/manifest.json"
+                            data-ethernet="bin/release_0_13_1/manifest_e.json">
+                            0.13.1</option>
+        
+                    <optgroup label="Sound Reactive (deprecated)">
+                        <option data-manifest="bin/sr_0_13_4/manifest.json" data-ethernet="bin/sr_0_13_4/manifest_e.json">
+                            0.13.4
+                        </option>
+                    </optgroup>
+                </select>
+                
+                <br><br>
+        
+                <div class="radio" onchange="setManifest()">
+                    <input class="radio__input" type="radio" value="normal" name="version" id="normal" checked>
+                    <label class="radio__label" for="normal" id="normal_label">Plain</label>
+                    <input class="radio__input" type="radio" value="audio" name="version" id="audio">
+                    <label class="radio__label" for="audio" id="audio_label">Audioreactive</label>
+                    <input class="radio__input" type="radio" value="ethernet" name="version" id="ethernet">
+                    <label class="radio__label" for="ethernet" id="ethernet_label">Ethernet</label>
+                    <input class="radio__input" type="radio" value="test" name="version" id="test">
+                    <label class="radio__label" for="test" id="test_label">ESP8266 CPU Frequency Test</label>
+                </div>
+        
+                <br><br>
+        
+                <div class="container inst-button">
+                    <esp-web-install-button id="inst" manifest="">
+                        <button class="btn" slot="activate">Install</button>
+                    </esp-web-install-button><br>
+                </div>       
+            </div>
+        </section>
+
+        <!-- Infometion Section -->
+        <section id="info" class="info section dark-background">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Infometion</h2>
+
+                <br>
+                
+                <p>
+                    <span>ยินดีต้อนรับสู่โครงการ</span>
+                    <span class="description-title"> WLED!</span>
+                </p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container">
+                <p class="d-flex justify-content-between" data-aos="fade-up" data-aos-delay="200" style="text-align: left;">การนำ ESP32/ESP8266 เว็บเซิร์ฟเวอร์มาใช้งานอย่างรวดเร็วและมีคุณสมบัติมากมายเพื่อควบคุม LED NeoPixel (WS2812B, WS2811, SK6812) หรือชิปเซ็ตที่ใช้ SPI เช่น WS2801 และ APA102</p>
+
+                <div class="row gy-3">
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-between" data-aos="fade-up" data-aos-delay="200">
+                        <div class="about-content ps-0 ps-lg-3">
+                            <h5 style="text-align: left;">คุณสมบัติ</h5>
+                            <p style="text-align: left;"></p>
+                            <ul style="text-align: left;">
+                                <li>ไลบรารี WS2812FX ที่ผสานรวมสำหรับเอฟเฟกต์พิเศษมากกว่า 100 รายการ</li>
+                                <li>เอฟเฟกต์ FastLED และจานสี 50 แบบ</li>
+                                <li>UI ที่ทันสมัยพร้อมการควบคุมสี เอฟเฟกต์ และส่วนต่างๆ</li>
+                                <li>ส่วนต่างๆ สำหรับกำหนดเอฟเฟกต์และสีต่างๆ ให้กับส่วนต่างๆ ของ LED</li>
+                                <li>หน้าการตั้งค่า - การกำหนดค่าผ่านเครือข่าย</li>
+                                <li>โหมดจุดเชื่อมต่อและสถานี - AP ที่ปลอดภัยโดยอัตโนมัติ</li>
+                                <li>เอาต์พุต LED สูงสุด 3 ดวงต่ออินสแตนซ์ ESP8266 และเอาต์พุต LED 10 ดวงต่ออินสแตนซ์ ESP32</li>
+                                <li>รองรับแถบ RGBW</li>
+                                <li>มีค่าที่ตั้งไว้ล่วงหน้าสำหรับผู้ใช้สูงสุด 250 ค่าเพื่อบันทึกและโหลดสี/เอฟเฟกต์ได้อย่างง่ายดาย รองรับการวนซ้ำผ่านค่าเหล่านั้น</li>
+                                <li>พรีเซ็ตสามารถใช้เพื่อดำเนินการเรียก API โดยอัตโนมัติ</li>
+                                <li>ฟังก์ชันไฟกลางคืน (หรี่แสงลงทีละน้อย)</li>
+                                <li>อัปเดตซอฟต์แวร์ OTA เต็มรูปแบบ (HTTP + ArduinoOTA) ป้องกันด้วยรหัสผ่าน</li>
+                                <li>นาฬิกาอะนาล็อกที่กำหนดค่าได้ + รองรับชุด Cronixie โดย Diamex</li>
+                                <li>ตั้งค่าขีดจำกัดความสว่างอัตโนมัติได้เพื่อการทำงานที่ปลอดภัยยิ่งขึ้น</li>
+                                <li>การกำหนดค่าตามระบบไฟล์เพื่อการสำรองข้อมูลพรีเซ็ตและการตั้งค่าที่ง่ายขึ้น</li>
+                                <li>การบูรณาการ Native Home-Assistant :เริ่มการกำหนดค่าการรวม Homeassistant ดั้งเดิม</li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-between" data-aos="fade-up" data-aos-delay="200">
+                        <div class="about-content ps-0 ps-lg-3">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container" data-aos="fade-up" data-aos-delay="200" style="text-align: left;">
+                    <h5>คู่มือเริ่มต้นอย่างรวดเร็ว</h5>
+                    <ul>
+                        <li>เชื่อมต่อแถบไฟ LED RGB(W) ที่เข้ากันได้กับ WS2812B เข้ากับ GPIO2 บนบอร์ดพัฒนาที่ใช้ ESP8266 ส่วนใหญ่พินนี้จะติดป้ายว่า D4 บนบอร์ดที่ใช้ ESP32 ให้ใช้ IO16 หรือ G16 หรือ 16. หากไม่สามารถทำให้สายเชื่อมต่อสั้นลงได้ ให้ใช้ตัวเลื่อนระดับ/ตัวแปลทางเลือกอื่นคือ เชื่อมต่อปุ่มกดแบบเปิดตามปกติเข้ากับ GPIO0 (พิน NodeMCU/Wemos D3 เมื่อใช้ ESP32 IO17) และกราวด์สำหรับการดำเนินการที่กำหนดค่าได้
+                            <p><strong class="text-danger">หมายเหตุ</strong><span class="fst-italic text-danger"> : การตั้งชื่อพินของบอร์ดจะแตกต่างกันไปขึ้นอยู่กับผู้ผลิต โปรดใช้พินเอาต์ของบอร์ดจากบอร์ดเฉพาะที่คุณซื้อและใช้พิน GPIO เพื่ออ้างอิงคู่มือนี้อย่าลืมเชื่อมต่อ ESP และกราวด์ของแถบ LED เข้าด้วยกัน</span></p>                            
+                            <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                                <img src="assets/img/12Vanalog_wiringx.png" class="img-fluid" alt="12V analog wiring">
+                            </div>
+                            <br>
+                            <p>ในขณะที่ใช้ ESP8266 และ LED ที่มีนาฬิกาและข้อมูล คุณสามารถใช้ฮาร์ดแวร์ SPI (ส่วนใหญ่เร็วกว่า) หรือซอฟต์แวร์ SPI ได้</p>
+                            <ul>
+                                <li>ฮาร์ดแวร์ SPI : ใช้GPIO14(SCLK) สำหรับนาฬิกาและ GPIO13(MOSI) สำหรับข้อมูล</li>
+                                <li>SPI ของซอฟต์แวร์ : เนื่องจากพินทั้งหมดสามารถเปลี่ยนได้ในส่วนฮาร์ดแวร์ของการตั้งค่า LED คุณจึงสามารถใช้พินใดก็ได้ แนะนำให้ใช้GPIO1(TxD) สำหรับนาฬิกาและGPIO2(D4) สำหรับข้อมูล</li>
+                            </ul>
+                            <p>เพื่อการใช้งานที่ปลอดภัย ขอแนะนำให้คุณเลือกขนาดสายไฟให้ถูกต้องและรวมฟิวส์เข้าด้วยกัน สำหรับข้อมูลอ้างอิง คุณสามารถใช้เครื่องคำนวณกำลังไฟ สายไฟ และ ฟิวส์ LED ได้</p>
+                            <p>สำหรับ LED แบบอะนาล็อก MOSFET IRLZ44N หรือ STP55NF06L ถือเป็นตัวเลือกที่ดี ตัวอย่างวงจร :</p>
+                            <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                                <img src="assets/img/12Vanalog_wiring.png" class="img-fluid" alt="12V analog wiring">
+                            </div>
+                            <br>
+                        </li>
+                        <li>แฟลชซอฟต์แวร์ลงในโมดูล ESP ของคุณ! มีสองตัวเลือกสำหรับขั้นตอนนี้ :
+                            <ul>
+                                <li>ฉันแค่อยากใช้ WLED! (ติดตั้งไบนารีรุ่น)</li>
+                                <li>ผมอยากแก้ไข WLED (คอมไพล์จากโค้ดต้นฉบับ)</li>
+                            </ul>
+                            <p>หากทุกอย่างทำงานได้ LED 30 ดวงแรกจะสว่างขึ้นเป็นสีส้มสดใสเพื่อกระตุ้นให้เกิดความกล้าหาญ มิตรภาพ และความสำเร็จ!</p>
+                        </li>
+
+                        <li>ใช้อุปกรณ์ WiFi เพื่อเชื่อมต่อกับจุดเชื่อมต่อWLED-APโดยใช้รหัสผ่านเริ่มต้นwled1234คุณสามารถสแกนรหัส QR นี้ได้ :
+                            <div class="container d-flex justify-content-center align-items-center" style="min-height: 50vh;">
+                                <img src="assets/img/WLED-QR-Connect-WB.png" class="img-fluid" alt="QR Code" style="width: 30%; height: auto;">
+                            </div>
+                            <br>
+                            <p>ไปที่ IP 4.3.2.1 ในเบราว์เซอร์ของคุณเพื่อควบคุมไฟของคุณ! คุณควรสามารถเชื่อมต่อได้ wled.me หากอยู่ในโหมดจุดเชื่อมต่อ (เซิร์ฟเวอร์ DNS ที่ฝังไว้)</p>
+                        </li>
+                    </ul>
+
+                    <h5>การตั้งค่า WiFi</h5>
+                    <p>วิธีเชื่อมต่อโมดูล WLED กับ Wi-fi ที่บ้านของคุณ :</p>
+                    <ul>
+                        <li>คลิก ไอคอน Config (รูปเฟือง) เพื่อแก้ไขการตั้งค่าโมดูล WLED ของคุณ และเลือก "การตั้งค่า WiFi"</li>
+                        <li>สำหรับเครือข่ายภายในบ้านส่วนใหญ่ เพียงป้อนชื่อเครือข่าย Wi-Fi และรหัสผ่านเครือข่ายของคุณ นอกจากนี้ คุณยังสามารถเปลี่ยนที่อยู่ mDNS สำหรับโมดูล WLED ของคุณได้</li>
+                        <li>คลิกบันทึก และ เชื่อมต่อ ที่ด้านล่างของหน้า</li>
+                        <li>เชื่อมต่ออุปกรณ์ของคุณกับเครือข่าย Wifi ที่บ้านอีกครั้ง</li>                        
+                        <li>ตรวจสอบรายการอุปกรณ์ในอินเทอร์เฟซผู้ใช้ของเราเตอร์เพื่อดู IP ของอุปกรณ์ WLED ในเครือข่าย local ของคุณ หากต้องการค้นหาโดยอัตโนมัติ ให้ใช้แอป WLED Native! สนุกกับซอฟต์แวร์ WLED ได้เลย!</li>
+                    </ul>
+
+                    <h5>ขั้นตอนการอัพเดตซอฟต์แวร์</h5>
+                    <ul>
+                        <li>วิธีที่ 1 : แฟลชการอัพเดตใหม่แบบเดียวกับการติดตั้งใหม่ (ดูด้านบน)</li>
+                        <li>วิธีที่ 2 : ซอฟต์แวร์มีความสามารถในการอัปเดตซอฟต์แวร์ OTA แบบรวม ก่อนอื่นคุณต้องเปิดใช้งานโดยพิมพ์รหัสผ่าน OTA ที่ถูกต้อง (ค่าเริ่มต้น : "wledota") ในเมนูการตั้งค่า ลบเครื่องหมายถูกในช่องทำเครื่องหมาย "OTA lock" จากนั้นบันทึกการตั้งค่าและรีบูต ESP จากนั้นคุณสามารถเลือก "อัปเดต OTA ด้วยตนเอง" ในการตั้งค่าความปลอดภัยและอัปโหลดไบนารีที่เผยแพร่เมื่อเสร็จแล้วขอแนะนำให้ล็อกฟังก์ชัน OTA อีกครั้ง เมื่อต้องการทำเช่นนี้ ให้ทำเครื่องหมายที่ช่องทำเครื่องหมายอีกครั้ง (คุณสามารถเปลี่ยนรหัสผ่านได้โดยพิมพ์รหัสผ่านใหม่ตอนนี้) รีบูต หากคุณพยายามเข้าถึงหน้าอัปเดตตอนนี้ คุณควรเห็นข้อความ "OTA lock active"</li>
+                        <li>วิธีที่ 3 : รองรับ ArduinoOTA ด้วย</li>
+                    </ul>
+
+                </div>
+                
+            </div>
+
+        </section>
+
+        <!-- Credit Section -->
+        <section id="credit" class="credit section dark-background">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Credits</h2>
+
+                <br>
+                
+                <p>
+                    <span>ขอขอบคุณนักพัฒนา</span>
+                    <span class="description-title"> WLED!</span>
+                </p>
+            </div>
+            <!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="200" style="text-align: left;">
+                <h5>ผู้สนับสนุนโดยตรงต่อโค้ด WLED</h5>                
+                <ul>
+                    <li>8-BitBrett สร้างรหัส QR เชื่อมต่อ WiFi อัตโนมัติด้วยโลโก้ Aircoookie/WLED!</li>
+                    <li>adamo สร้างโลโก้เซิร์ฟเวอร์ Discord แบบเคลื่อนไหว!</li>
+                    <li>@blazoncek สร้างคุณลักษณะใหม่และปรับปรุงมากมายในหลายส่วนของ WLED!</li>
+                    <li>@debsahu นำเสนอการค้นหาอัตโนมัติ HomeAssistant และช่วยเหลือ PIO มากมาย!</li>
+                    <li>@ewowi ปรับปรุงประสิทธิภาพมากมาย ทั้ง 2D, เสียง และการปรับปรุงผู้ใช้ต่างๆ ผู้ดูแลระบบ MoonModules</li>
+                    <li>@frenck สร้างการบูรณาการแบบเนทีฟกับ HomeAssistant ได้อย่างน่าทึ่ง มีเสถียรภาพและเต็มไปด้วยคุณสมบัติ!</li>
+                    <li>@Moustachauve เพิ่มการแสดงภาพจานสีและพัฒนาแอป WLED Native สำหรับ Android และ iOS!</li>
+                    <li>@pbolduc การซิงโครไนซ์ DDP UDP, ปรับปรุง UI และการปรับแต่งของผู้ใช้</li>
+                    <li>@photocromax ช่วยนำคุณสมบัติการแสดงภาพสดให้มีชีวิตชีวา</li>
+                    <li>@raymiec กำลังทำงานในการสร้างไคลเอนต์ที่ดีที่สุดสำหรับ Android และ iOS!</li>
+                    <li>@scottrbailey เพิ่มการแสดงภาพระยะไกล JSON IR และ gif สำหรับเอกสาร</li>
+                    <li>@softhack007 การประมวลผลเสียง การสนับสนุน MCU ใหม่ การตรวจสอบโค้ด และการเพิ่มประสิทธิภาพต่างๆ ผู้ดูแลระบบ MoonModules</li>
+                    <li>@StormPie ผู้สร้าง UI มือถือสุดเจ๋ง!</li>
+                    <li>@timothybrown เพิ่มการตรวจสอบสิทธิ์ MQTT!</li>
+                    <li>@viknet365 พอร์ตเอฟเฟกต์ Meteor!</li>
+                    <li>@wiesendaniel เพิ่มการกำหนดค่าสำหรับ PlatformIO IDE!</li>
+                    <li>@YeonV จัดเตรียมการกำหนดค่าแสง MQTT ของ HomeAssistant เบื้องต้น!</li>
+                    <li>@werkstrom เพิ่มตัวแปลง PixelArt</li>
+                    <li>@netmindz เอฟเฟกต์ Audio Reactive ตามความถี่และจานสี Audio Reactive ผู้ดูแลระบบ MoonModules ผู้จัดการการเผยแพร่ WLED</li>
+                </ul>
+            </div>
+            Powered by <a href="https://esphome.github.io/esp-web-tools/" target="_blank">ESP Web Tools</a>                   
+            <br>               
+            <a href="https://github.com/Aircoookie/WLED" target="_blank">GitHub</a> | <a href="https://kno.wled.ge" target="_blank">kno.wled.ge</a>                               
+        </section>
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="container footer-top">
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <a href="index.html" class="d-flex align-items-center">
+                        <span class="sitename">Microtronic.biz</span>
+                    </a>
+                    <div class="footer-contact pt-3">
+                        <p>136/34 Padipat.Rd</p>
+                        <p>Phayathai Phayathai</p>
+                        <p class="mt-3">
+                            <strong>Phone:</strong> <span>065-541-9166</span>
+                        </p>
+                        <p><strong>Email:</strong> <span>grids@microtronic.biz</span></p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Terms of service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="#">Web Design</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Web Development</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i>
+                            <a href="#">Product Management</a>
+                        </li>
+                        <li>
+                            <i class="bi bi-chevron-right"></i> <a href="#">Marketing</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12">
+                    <h4>Follow Us</h4>
+                    <p>Share your knowledge and experience.</p>
+                    <div class="social-links d-flex">
+                        <a href="https://www.facebook.com/BlackWingsCenter/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/kon.phan.tang/"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/micro-dev-g/"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://github.com/GridsMicro/microtronic"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container copyright text-center mt-4">
+            <p>
+                © <span>Copyright</span>
+                <strong class="px-1 sitename">Microtronic.biz</strong>
+                <span>All Rights Reserved</span>
+            </p>
+            <div class="credits">
+                Designed by <a href="https://Microtronic.com/">Microtronic</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>

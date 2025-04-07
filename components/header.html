@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Component</title>
+
+    <!-- Main CSS File -->
+    <link href="style.css" rel="stylesheet" />
+    
+</head>
+<body>
+
+    <template id="header-template">
+        <header class="header">
+            <h1>Header My Website</h1>
+            <p>Discription</p>
+        </header>
+    </template>
+
+    <script>
+        function createHeader() {
+            const template = document.getElementById('header-template');
+            return
+            template.content.cloneNode(true);
+        }
+    </script>
+    
+</body>
+</html>
